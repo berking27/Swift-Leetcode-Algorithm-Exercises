@@ -185,4 +185,22 @@ func mergeTwoLists(_ list1: ListNode?, _ list2: ListNode?) -> ListNode? {
 
 //MARK: - Remove Duplicates From Sorted Array
 //https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/
+func removeDuplicates(_ nums: inout [Int]) -> Int {
+    guard nums.count > 1 else { return nums.count }
+    var index = 0
+    
+    for i in 1..<nums.count {
+        if nums[index] == nums[i] {
+            index += 1
+            nums[index] = nums[i]
+        }
+    }
+    
+    return index + 1
+}
 
+
+
+var array = [1,1,2,3,3,4,4,5,5]
+let k = removeDuplicates(&array)
+print(k)
