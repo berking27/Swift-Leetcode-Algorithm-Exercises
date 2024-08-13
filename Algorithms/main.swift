@@ -204,3 +204,25 @@ func removeDuplicates(_ nums: inout [Int]) -> Int {
 var array = [1,1,2,3,3,4,4,5,5]
 let k = removeDuplicates(&array)
 print(k)
+
+//MARK: - Remove Element
+//https://leetcode.com/problems/remove-element/description/
+func removeElement(_ nums: inout [Int], _ val: Int) -> Int {
+    guard nums.count >= 1 else { return 0 }
+    var index: Int = 0
+    
+    for i in 0..<nums.count {
+        if nums[i] != val {
+            nums[index] = nums[i]
+            index += 1
+        }
+    }
+    
+    return index
+}
+
+var nums = [1]
+let val = 1
+let element = removeElement(&nums, val)
+
+print("Result: k = \(element), modified nums = \(nums.prefix(element))")
