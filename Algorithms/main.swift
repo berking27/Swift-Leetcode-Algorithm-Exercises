@@ -226,3 +226,28 @@ let val = 1
 let element = removeElement(&nums, val)
 
 print("Result: k = \(element), modified nums = \(nums.prefix(element))")
+
+
+//MARK: - Find the Index of the First Occurence in a String
+//https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/
+func strStr(_ haystack: String, _ needle: String) -> Int {
+    if haystack.contains(needle) {
+        for firstIndex in haystack.indices{
+            if haystack[firstIndex] == needle.first {
+                let startIndex = haystack.distance(from: haystack.startIndex, to: firstIndex)
+                
+                if haystack[firstIndex...].hasPrefix(needle) {
+                    return startIndex
+                }
+            }
+        }
+    } else {
+        return -1
+    }
+    
+    return -1
+}
+
+print(strStr("hello", "lo"))
+
+
