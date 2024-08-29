@@ -251,3 +251,31 @@ func strStr(_ haystack: String, _ needle: String) -> Int {
 print(strStr("hello", "lo"))
 
 
+//MARK: - Search Insert Positio
+//https://leetcode.com/problems/search-insert-position/description/
+func searchInsert(_ nums: [Int], _ target: Int) -> Int {
+   
+    if let index = nums.firstIndex(of: target) {
+        return index
+    }
+    
+    for index in 0..<nums.count {
+        if nums[index] > target {
+            return index
+        }
+    }
+    
+    return nums.count
+}
+
+print(searchInsert([1,3,5,6], 5))
+
+//MARK: - Length of Last Word
+//https://leetcode.com/problems/length-of-last-word/
+func lengthOfLastWord(_ s: String) -> Int {
+    let words = s.components(separatedBy: " ").filter { !$0.isEmpty}
+    
+    return words.last?.count ?? 0
+}
+
+print(lengthOfLastWord("luffy is still joyboy"))
