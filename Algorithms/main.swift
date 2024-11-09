@@ -279,3 +279,13 @@ func lengthOfLastWord(_ s: String) -> Int {
 }
 
 print(lengthOfLastWord("luffy is still joyboy"))
+
+
+//MARK: - Cuboid Quiz Sample Tasks
+
+var defaultCuboid = ColoredCuboid()
+var customizedCuboid = ColoredCuboid(width: 24.0, length: 12.0, height: 6, color: "Green")
+
+print(defaultCuboid.displayDetails())
+print(customizedCuboid.displayDetails())
+
